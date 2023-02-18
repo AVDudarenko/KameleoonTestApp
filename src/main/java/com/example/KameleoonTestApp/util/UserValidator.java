@@ -1,6 +1,7 @@
 package com.example.KameleoonTestApp.util;
 
 import com.example.KameleoonTestApp.models.Users;
+import com.example.KameleoonTestApp.services.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
