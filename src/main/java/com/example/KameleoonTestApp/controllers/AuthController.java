@@ -1,6 +1,7 @@
 package com.example.KameleoonTestApp.controllers;
 
 import com.example.KameleoonTestApp.models.Users;
+import com.example.KameleoonTestApp.services.RegistrationService;
 import com.example.KameleoonTestApp.util.UserValidator;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

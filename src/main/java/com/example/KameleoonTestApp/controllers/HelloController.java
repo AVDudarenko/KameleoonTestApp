@@ -1,6 +1,7 @@
 package com.example.KameleoonTestApp.controllers;
 
 import com.example.KameleoonTestApp.security.UserDetails;
+import com.example.KameleoonTestApp.services.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
