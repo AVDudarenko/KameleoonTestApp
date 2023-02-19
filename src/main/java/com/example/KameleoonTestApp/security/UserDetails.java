@@ -22,7 +22,7 @@ public record UserDetails(User user) implements org.springframework.security.cor
 
     @Override
     public String getUsername() {
-        return this.user.getName();
+        return this.user.getUsername();
     }
 
     @Override

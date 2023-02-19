@@ -22,9 +22,9 @@ public class Quote {
     @Column(name = "author")
     private String author;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private List<Vote> votesList;
+//    @OneToMany
+//    @JoinColumn(name = "user_id")
+//    private List<Vote> votesList;
 
     public long getId() {
         return id;
