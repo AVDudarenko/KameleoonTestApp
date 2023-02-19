@@ -1,10 +1,10 @@
 package com.example.KameleoonTestApp.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotEmpty;
 
-import java.util.List;
+
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -17,8 +17,8 @@ public class User {
 
     @NotEmpty(message = "username must not be null")
     @Size(min = 3, max = 100, message = "username must be from 3 to 100 symbols")
-    @Column(name = "name")
-    private String name;
+    @Column(name = "username")
+    private String username;
 
     @NotEmpty(message = "password must not be null")
     @Size(min = 3, max = 100, message = "password must be from 3 to 100 symbols")
@@ -28,16 +28,16 @@ public class User {
     @Column(name = "dateOfCreation")
     private String dateOfCreation;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private List<Quote> quoteList;
+//    @OneToMany
+//    @JoinColumn(name = "user_id")
+//    private List<Quote> quoteList;
 
     public User() {
 
     }
 
-    public User(String name, String password) {
-        this.name = name;
+    public User(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 
@@ -49,12 +49,12 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -77,7 +77,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", dateOfCreation='" + dateOfCreation + '\'' +
                 '}';
