@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class Users {
+public class User {
 
     @Id
     @Column(name = "id")
@@ -30,13 +30,13 @@ public class Users {
 
     @OneToMany
     @JoinColumn(name = "user_id")
-    private List<Quotes> quoteList;
+    private List<Quote> quoteList;
 
-    public Users() {
+    public User() {
 
     }
 
-    public Users(String name, String password) {
+    public User(String name, String password) {
         this.name = name;
         this.password = password;
     }

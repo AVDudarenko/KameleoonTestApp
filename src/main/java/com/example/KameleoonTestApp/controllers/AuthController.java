@@ -1,6 +1,6 @@
 package com.example.KameleoonTestApp.controllers;
 
-import com.example.KameleoonTestApp.models.Users;
+import com.example.KameleoonTestApp.models.User;
 import com.example.KameleoonTestApp.services.RegistrationService;
 import com.example.KameleoonTestApp.util.UserValidator;
 import jakarta.validation.Valid;
@@ -31,12 +31,12 @@ public class AuthController {
     }
 
     @GetMapping("/registration")
-    public String registrationPage(@ModelAttribute("person") Users user) {
+    public String registrationPage(@ModelAttribute("person") User user) {
         return "auth/registration";
     }
 
     @PostMapping("/registration")
-    public String performRegistration(@ModelAttribute("person") @Valid Users user, BindingResult bindingResult) {
+    public String performRegistration(@ModelAttribute("person") @Valid User user, BindingResult bindingResult) {
         userValidator.validate(user, bindingResult);
 
         if (bindingResult.hasErrors())
