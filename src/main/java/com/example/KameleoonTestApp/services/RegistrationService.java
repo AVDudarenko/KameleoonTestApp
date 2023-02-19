@@ -1,6 +1,6 @@
 package com.example.KameleoonTestApp.services;
 
-import com.example.KameleoonTestApp.models.Users;
+import com.example.KameleoonTestApp.models.User;
 import com.example.KameleoonTestApp.repositories.UsersRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class RegistrationService {
     }
 
     @Transactional
-    public void register(Users user) {
+    public void register(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
     }

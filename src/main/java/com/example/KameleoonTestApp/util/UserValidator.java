@@ -1,6 +1,6 @@
 package com.example.KameleoonTestApp.util;
 
-import com.example.KameleoonTestApp.models.Users;
+import com.example.KameleoonTestApp.models.User;
 import com.example.KameleoonTestApp.services.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -20,12 +20,12 @@ public class UserValidator implements Validator {
 
     @Override
     public boolean supports(Class<?> clazz) {
-        return Users.class.equals(clazz);
+        return User.class.equals(clazz);
     }
 
     @Override
     public void validate(Object target, Errors errors) {
-        Users user = (Users) target;
+        User user = (User) target;
         try {
             userDetailService.loadUserByUsername(user.getName());
         } catch (UsernameNotFoundException e) {

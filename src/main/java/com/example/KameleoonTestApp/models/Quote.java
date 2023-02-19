@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "quotes")
-public class Quotes {
+public class Quote {
 
     @Id
     @Column(name = "id")
@@ -24,7 +24,7 @@ public class Quotes {
 
     @OneToMany
     @JoinColumn(name = "user_id")
-    private List<Votes> votesList;
+    private List<Vote> votesList;
 
     public long getId() {
         return id;

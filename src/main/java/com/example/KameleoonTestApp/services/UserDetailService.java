@@ -1,6 +1,6 @@
 package com.example.KameleoonTestApp.services;
 
-import com.example.KameleoonTestApp.models.Users;
+import com.example.KameleoonTestApp.models.User;
 import com.example.KameleoonTestApp.repositories.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,7 +22,7 @@ public class UserDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<Users> person = userRepository.findByUsername(username);
+        Optional<User> person = userRepository.findByUsername(username);
 
         if (person.isEmpty()){
             throw new UsernameNotFoundException("User not found");

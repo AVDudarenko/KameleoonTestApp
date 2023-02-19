@@ -1,14 +1,14 @@
 package com.example.KameleoonTestApp.security;
 
 
-import com.example.KameleoonTestApp.models.Users;
+import com.example.KameleoonTestApp.models.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.Collection;
 import java.util.Collections;
 
-public record UserDetails(Users user) implements org.springframework.security.core.userdetails.UserDetails {
+public record UserDetails(User user) implements org.springframework.security.core.userdetails.UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

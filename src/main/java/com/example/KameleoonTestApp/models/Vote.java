@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "votes")
-public class Votes {
+public class Vote {
 
     @Id
     @Column(name = "id")
